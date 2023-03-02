@@ -32,7 +32,7 @@ function MainPage() {
       const categoriesEl = allCategories.map(el => el.toLowerCase());
       for (const category of categories) {
         if (categoriesEl.includes(category)) {
-          jobs.push(job);
+          !jobs.includes(job) && jobs.push(job);
         } else {
           const index = jobs.indexOf(job);
           if (index > -1) {
