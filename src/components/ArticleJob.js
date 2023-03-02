@@ -1,12 +1,12 @@
 import '../css/article-job.css';
-
-function articlebuttonsCategorys (data) {
+ 
+export function articlebuttonsCategorys (data) {
   const buttonsArray = [];
   buttonsArray.push(data.languages, data.level, data.role, data.tools);
-
+  
   return buttonsArray.flat();
 }
-
+ 
 function ArticleJob({data, onHandleClick}) {
   const nameLogo = data.logo.split('/');
   const buttonsCategorys = articlebuttonsCategorys(data);
@@ -36,11 +36,11 @@ function ArticleJob({data, onHandleClick}) {
       </div>
       <div className="article-job__categorys">
         {buttonsCategorys.map((element, index) => {
-          return <button className="btn-category-article js-btn-category-article" type="button" data-category={element} onClick={event => onHandleClick(element)} key={index}>{element}</button>
+          return <button className="btn-category-article js-btn-category-article" type="button" data-category={element} onClick={() => onHandleClick(element.toLowerCase())} key={index}>{element}</button>
         })}
       </div>
     </div>
   );
 }
-
+ 
 export default ArticleJob;

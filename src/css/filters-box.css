@@ -18,6 +18,10 @@
   text-decoration: underline;
   text-underline-offset: 3px; }
 
+.category-job__buttons {
+  display: flex;
+  flex-flow: wrap; }
+
 .filter-button {
   margin: 5px 10px 5px 0;
   display: flex;
