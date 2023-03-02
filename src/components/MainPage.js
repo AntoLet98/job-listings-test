@@ -16,6 +16,7 @@ function MainPage() {
   }
   const categoryRemove = (categoryRemove) => {
     setCategories(categories.filter(item => item !== categoryRemove));
+    setJobArticles(data);
   }
   const clearAll = () => {
     setCategories([]);
@@ -43,6 +44,9 @@ function MainPage() {
     const jobsWrapper = jobs.filter((item, index) => jobs.indexOf(item) === index);
     if (jobsWrapper.length > 0) {
       setJobArticles(jobsWrapper);
+    }
+    if (categories.length === 0) {
+      setJobArticles(data);
     }
   }, [categories]);
   return (
