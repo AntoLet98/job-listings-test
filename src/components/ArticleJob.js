@@ -7,8 +7,7 @@ function articlebuttonsCategorys (data) {
   return buttonsArray.flat();
 }
 
-function ArticleJob(dataElement) {
-  const data = dataElement.data;
+function ArticleJob({data, onHandleClick}) {
   const nameLogo = data.logo.split('/');
   const buttonsCategorys = articlebuttonsCategorys(data);
   return (
@@ -37,7 +36,7 @@ function ArticleJob(dataElement) {
       </div>
       <div className="article-job__categorys">
         {buttonsCategorys.map((element, index) => {
-          return <button className="btn-category-article js-btn-category-article" type="button" data-category={element} key={index}>{element}</button>
+          return <button className="btn-category-article js-btn-category-article" type="button" data-category={element} onClick={event => onHandleClick(element)} key={index}>{element}</button>
         })}
       </div>
     </div>
