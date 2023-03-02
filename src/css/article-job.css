@@ -51,6 +51,19 @@
   .tag-btn.secondary {
     background: var(--very-dark-grayish-cyan); }
 
+.btn-category-article {
+  color: var(--main-color);
+  background-color: var(--light-grayish-cyan);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin: 5px 10px 5px 0; }
+  .btn-category-article:last-child {
+    margin-right: 0; }
+  .btn-category-article:hover {
+    color: var(--white);
+    background-color: var(--very-dark-grayish-cyan); }
+
 @media (min-width: 992px) {
   .article-job__informations {
     margin-left: 25px;

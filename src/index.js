@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/common.css';
-import App from './App';
 import Header from './components/Header';
 import MainPage from './components/MainPage'
 
@@ -11,7 +10,6 @@ root.render(
   <React.StrictMode>
     <Header />
     <MainPage />
-    <App />
   </React.StrictMode>
 );
 
