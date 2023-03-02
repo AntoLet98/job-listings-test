@@ -16,8 +16,11 @@ function MainPage() {
   }
   const categoryRemove = (categoryRemove) => {
     setCategories(categories.filter(item => item !== categoryRemove));
-    console.log(categories);
   }
+  const clearAll = () => {
+    setCategories([]);
+  }
+  
   useEffect(() => {
     setJobArticles(data);
   }, []);
@@ -44,7 +47,9 @@ function MainPage() {
   }, [categories]);
   return (
     <main className='page'>
-      <FiltersBox data={categories} categoryRemove={categoryRemove}/>
+      {categories.length > 0 &&
+        <FiltersBox data={categories} categoryRemove={categoryRemove} clearAll={clearAll}/>
+      }
       {
         jogArticles.map((element) => {
           return <ArticleJob data={element} key={element.id} onHandleClick={categoryClick}/>
