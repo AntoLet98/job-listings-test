@@ -2,10 +2,14 @@
   background-color: var(--white);
   min-height: 30px;
   margin-bottom: 45px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: var(--light-grayish-cyan) 0px 5px 10px;
   padding: 20px;
   position: relative; }
+  .article-job__container:last-child {
+    margin-bottom: 0; }
+  .article-job__container:hover .article-job__hover-status {
+    height: 100%; }
 
 .article-job__img {
   width: 45px;
@@ -40,7 +44,18 @@
 .article-job__informations {
   border-bottom: 2px solid var(--light-grey);
   padding-bottom: 20px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-top: 10px; }
+
+.article-job__hover-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+  width: 5px;
+  height: 0;
+  background-color: var(--main-color);
+  transition: 0.5s; }
 
 .tag-btn {
   background: var(--main-color);
@@ -69,7 +84,8 @@
     margin-left: 25px;
     border-bottom: 0;
     padding-bottom: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 0; }
   .article-job__container {
     display: flex;
     align-items: center;

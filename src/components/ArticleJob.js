@@ -12,6 +12,7 @@ function ArticleJob({data, onHandleClick}) {
   const buttonsCategorys = articlebuttonsCategorys(data);
   return (
     <div className="article-job__container">
+      <div className="article-job__hover-status"></div>
       <div className="article-job__img">
         <img src={require(`../images/${nameLogo[2]}`)} alt={data.company} />
       </div>

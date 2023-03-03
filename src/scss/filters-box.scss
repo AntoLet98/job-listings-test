@@ -15,9 +15,13 @@
         background: none;
         border: none;
         cursor: pointer;
-        color: var(--main-color);
-        text-decoration: underline;
         text-underline-offset: 3px;
+        transition: 0.5s;
+        color: var(--light-grey);
+        &:hover {
+            color: var(--main-color);
+            text-decoration: underline;
+        }
     }
     &__buttons {
         display: flex;

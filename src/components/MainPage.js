@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react';
 import {articlebuttonsCategorys} from './ArticleJob'
  
 function MainPage() {
-  const [jogArticles, setJobArticles] = useState([]);
+  const [jobArticles, setJobArticles] = useState([]);
   const [categories, setCategories] = useState([]);
  
   const categoryClick = (categoryClicked) => {
@@ -27,7 +27,7 @@ function MainPage() {
   }, []);
   useEffect(() => {
     const jobs = [];
-    for(const job of jogArticles) {
+    for(const job of jobArticles) {
       const allCategories = articlebuttonsCategorys(job);
       const categoriesEl = allCategories.map(el => el.toLowerCase());
       for (const category of categories) {
@@ -41,9 +41,9 @@ function MainPage() {
         }
       }
     }
-    const jobsWrapper = jobs.filter((item, index) => jobs.indexOf(item) === index);
-    if (jobsWrapper.length > 0) {
-      setJobArticles(jobsWrapper);
+    
+    if (jobs.length > 0) {
+      setJobArticles(jobs);
     }
     if (categories.length === 0) {
       setJobArticles(data);
@@ -55,7 +55,7 @@ function MainPage() {
         <FiltersBox data={categories} categoryRemove={categoryRemove} clearAll={clearAll}/>
       }
       {
-        jogArticles.map((element) => {
+        jobArticles.map((element) => {
           return <ArticleJob data={element} key={element.id} onHandleClick={categoryClick}/>
         })
       }
