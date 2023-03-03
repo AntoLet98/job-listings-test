@@ -5,10 +5,8 @@ function FiltersBox({data, categoryRemove, clearAll}) {
   const pageMain = document.querySelector('.page');
   if (data.length > 0) {
     pageMain.classList.add('category-open')
-  } else {
-    if (pageMain && pageMain.classList.contains('category-open')) {
-      pageMain.classList.remove('category-open')
-    }
+  } else if (pageMain && pageMain.classList.contains('category-open')) {
+    pageMain.classList.remove('category-open')
   }
   return (
     <div className="category-job__container">
